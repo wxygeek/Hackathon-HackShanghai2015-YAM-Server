@@ -131,8 +131,7 @@ router.post('/sms', function*() {
   var currentSmsRule = null;
   for (var i = 0; i < smsRules.length; i++) {
     var rule = smsRules[i];
-    var reg = new RegExp(rule.rule);
-    if (reg.test(text)) {
+    if (rule.rule.test(text)) {
       currentSmsRule = rule;
       break;
     }
@@ -140,10 +139,9 @@ router.post('/sms', function*() {
 
   var currentName = null;
   for (var i = 0; i < namePriorities.length; i++) {
-    var rule = namePriorities[i];
-    var reg = new RegExp(rule.rule);
-    if (reg.test(text)) {
-      currentName = rule;
+    var rule2 = namePriorities[i];
+    if (rule2.rule.test(phone)) {
+      currentName = rule2;
       break;
     }
   }
