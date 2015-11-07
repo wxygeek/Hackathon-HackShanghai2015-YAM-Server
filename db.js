@@ -95,7 +95,7 @@ exports.storage = [{
   autoReply: {
     flag: true,
     content: '祝你生日快乐哦！每天都要开开心心的~',
-    phone: '+8615945990589'
+    phone: '-1'
   },
   autoCalendar: {
     flag: false,
@@ -115,7 +115,7 @@ exports.storage_old = [{
   autoReply: {
     flag: true,
     content: '抱歉，我那段时间有安排了。',
-    phone: '+8615945990589'
+    phone: '-1'
   },
   autoCalendar: {
     flag: false,
@@ -133,7 +133,7 @@ exports.storage_old = [{
   autoReply: {
     flag: true,
     content: '好的，不见不散。',
-    phone: '+8615704600640'
+    phone: '-1'
   },
   autoCalendar: {
     flag: false,
