@@ -24,6 +24,14 @@ var namePriorities = [{
   picKey: 'sarah.jpg'
 }];
 
+var getTuringResult = function*(text) {
+  var url = "http://www.tuling123.com/openapi/api?key=e0656ec0047415e904401d40987b9d81&info=" + encodeURIComponent(text);
+  var result = yield urllib.requestThunk(url, {
+    dataType: 'json'
+  });
+  return result.data.text;
+};
+
 var getNLPTimeResult = function*(text) {
 
   var url = "http://ltpapi.voicecloud.cn/analysis/?api_key=M3n7l5b3AkKTiM6hkitETCMkxsphEzZhRwGQ6Jhw&pattern=all&format=json&text=" + encodeURIComponent(text);
@@ -168,21 +176,18 @@ router.post('/sms', function*() {
     }
   }
 
-  if ((currentName && currentName.priority > 0) || !currentName) {
-    if (currentSmsRule) {
+  if(currentSmsRule) {
+    if(!currentName || currentName.priority > 0) {
       obj.autoReply.content = currentSmsRule.yes;
     } else {
-      obj.autoReply.content = "好的。";
+      obj.autoReply.content = currentSmsRule.no;
     }
   } else {
-    if (currentSmsRule) {
-      obj.autoReply.content = currentSmsRule.no;
-    } else {
-      obj.autoReply.content = "不要。";
-    }
+    // Turing
+    obj.autoReply.content = yield getTuringResult(text);
   }
 
-  var name = currentName ? currentName.name : '未知联系人';
+  var name = currentName ? currentName.name : phone;
 
   obj.description = "来自 " + name + " [SMS]\n自动回复：" + obj.autoReply.content;
 
