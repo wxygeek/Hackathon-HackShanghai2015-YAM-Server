@@ -13,12 +13,12 @@ var smsRules = [{
 
 var namePriorities = [{
   name: 'Chancellor Yu',
-  rule: /15704600640/,
+  rule: /\+8615704600640/,
   priority: 100,
   picKey: 'ylz.jpg'
 }, {
   name: 'Sarah',
-  rule: /15945990589/,
+  rule: /\+8615945990589/,
   priority: -1,
   picKey: 'sarah.jpg'
 }];
