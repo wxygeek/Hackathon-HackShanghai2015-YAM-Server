@@ -1,0 +1,19 @@
+{
+  "title": "明晚8点吃饭？",
+  "picUrl": "http://abc.com/1.jpg",
+  "autoReply": {
+    "flag": true,
+    "content": "好的，明晚不见不散。",
+    "phone": "13000000000"
+  },
+  "autoCalendar": {
+    "flag": true,
+    "time": 127648372,
+    "content": "与Chancellor Yu共度晚餐",
+    "place": "31°13'48.00\"N 121°28'12.00\"E"
+  },
+  "description": "后台拼接的描述",
+  "hasCountDown": true,
+  "yesBtnText": "自动处理",
+  "noBtnText": "手动处理"
+}
