@@ -1,6 +1,42 @@
 'use strict';
 
 exports.storage = [{
+  title: 'HackShanghai 成功举办！',
+  autoReply: {
+    flag: false,
+    content: '',
+    phone: ''
+  },
+  autoCalendar: {
+    flag: false,
+    time: 1447018462,
+    content: '',
+    place: ''
+  },
+  hasCountDown: true,
+  yesBtnText: '自动分享给好友',
+  noBtnText: '手动处理',
+  description: '来自 News [Public Info]\nHackShanghai成功举办！分享这份喜悦到您的好友圈！',
+  picUrl: 'http://api.itimepost.com:7777/img/default.jpg'
+}, {
+  title: '我想我们没必要再联系了。你是一个好人。',
+  autoReply: {
+    flag: false,
+    content: '',
+    phone: ''
+  },
+  autoCalendar: {
+    flag: false,
+    time: 1447018462,
+    content: '',
+    place: ''
+  },
+  hasCountDown: false,
+  yesBtnText: '不，别离开我！',
+  noBtnText: '算了，就这样吧。',
+  description: '来自 Girl Friend [Contact]\n重要且紧急的事情，请主动处理！',
+  picUrl: 'http://api.itimepost.com:7777/img/feng.jpg'
+}, {
   title: '上海今日PM2.5为200',
   autoReply: {
     flag: false,
