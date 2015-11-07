@@ -171,8 +171,8 @@ router.post('/sms', function*() {
   for (var i = 0; i < namePriorities.length; i++) {
     var rule2 = namePriorities[i];
     if (rule2.rule.test(phone)) {
+      obj.autoReply.phone = "-1";
       currentName = rule2;
-      phone = "-1";
       break;
     }
   }
