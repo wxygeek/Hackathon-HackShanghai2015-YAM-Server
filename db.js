@@ -14,10 +14,28 @@ exports.storage = [{
     place: ''
   },
   hasCountDown: true,
-  yesBtnText: '自动处理',
+  yesBtnText: '自动空气净化',
   noBtnText: '手动处理',
   description: '来自 Weather [Public Info]\n您的家用空气净化器将于您到家10分钟前自动打开',
   picUrl: 'http://api.itimepost.com:7777/img/haze.png'
+}, {
+  title: 'TFBOY即将在上海举办演唱会',
+  autoReply: {
+    flag: false,
+    content: '',
+    phone: ''
+  },
+  autoCalendar: {
+    flag: true,
+    time: 1448971200,
+    content: 'TFBOY上海演唱会',
+    place: ''
+  },
+  hasCountDown: true,
+  yesBtnText: '自动订票',
+  noBtnText: '手动处理',
+  description: '来自 idol [Public Info]\n自动为你订购TFBOY上海演唱会第一排VIP座位，售价18888∑元。',
+  picUrl: 'http://api.itimepost.com:7777/img/tf.jpg'
 }, {
   title: '检测到小偷进入到你的房间！',
   autoReply: {
@@ -52,7 +70,7 @@ exports.storage_old = [{
     place: ''
   },
   hasCountDown: true,
-  yesBtnText: '自动处理',
+  yesBtnText: '自动拒绝',
   noBtnText: '手动处理',
   description: '来自 Sarah [SMS]\n自动回复：抱歉，我那段时间有安排了。',
   picUrl: 'http://api.itimepost.com:7777/img/sarah.jpg'
@@ -70,7 +88,7 @@ exports.storage_old = [{
     place: ''
   },
   hasCountDown: true,
-  yesBtnText: '自动处理',
+  yesBtnText: '自动同意',
   noBtnText: '手动处理',
   description: '来自 Chancellor Yu [SMS]\n自动回复：好的，不见不散。',
   picUrl: 'http://api.itimepost.com:7777/img/ylz.jpg'
