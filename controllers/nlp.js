@@ -40,6 +40,15 @@ var getNLPTimeResult = function*(text) {
   }).forEach(function(elm) {
     var content = elm.cont;
     switch (content) {
+      case '明天':
+        time = time.set('date', time.get('date') + 1);
+        break;
+      case '后天':
+        time = time.set('date', time.get('date') + 2);
+        break;
+      case '大后天':
+        time = time.set('date', time.get('date') + 3);
+        break;
       case '明年':
         time = time.set('year', 2016);
         break;
