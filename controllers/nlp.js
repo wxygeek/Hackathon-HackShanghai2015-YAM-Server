@@ -164,10 +164,6 @@ router.post('/sms', function*() {
 
   obj.description = "来自 " + name + " [SMS]\n自动回复：" + obj.autoReply.content;
 
-  obj.autoCalendar = {
-    flag: false
-  };
-
   if (obj.autoCalendar.flag) {
     obj.description += "\n加入日程：";
   }
