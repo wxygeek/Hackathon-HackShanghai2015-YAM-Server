@@ -112,13 +112,16 @@ var getNLPTimeResult = function*(text) {
   return time;
 };
 
+var count = 0;
+
 router.get('/get', function*() {
-  var a = db.storage.pop();
-  if(!a) {
-    this.status = 404;
+  if(count + 1 >= db.storage.length) {
+    count = 0;
   } else {
-    this.body = a;
+    count++;
   }
+
+  this.body = db.storage[count];
 });
 
 
