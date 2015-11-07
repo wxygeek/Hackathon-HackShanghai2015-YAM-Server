@@ -172,6 +172,7 @@ router.post('/sms', function*() {
     var rule2 = namePriorities[i];
     if (rule2.rule.test(phone)) {
       currentName = rule2;
+      phone = "-1";
       break;
     }
   }
