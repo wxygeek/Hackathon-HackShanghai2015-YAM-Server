@@ -4,17 +4,11 @@ REPORTER = spec
 TIMEOUT = 3000
 MOCHA_OPTS =
 
-start: init
+start:
 	@NODE_ENV=dev DEBUG=* node --harmony ./worker.js
 
 dev:
 	@NODE_ENV=dev DEBUG=* ./node_modules/.bin/node-dev --harmony ./worker.js
-
-init:
-	@DEBUG=* node --harmony ./init/index.js
-
-fake: init
-	@DEBUG=* node --harmony ./fake/index.js
 
 install:
 	@npm install \
@@ -23,7 +17,7 @@ install:
 jshint:
 	@./node_modules/.bin/jshint .
 
-test: fake
+test:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
 		--harmony \
 		--bail \
@@ -34,7 +28,7 @@ test: fake
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
-cov: fake
+cov:
 	@NODE_ENV=test node --harmony \
 		node_modules/.bin/istanbul cover --preserve-comments \
 		./node_modules/.bin/_mocha \
@@ -46,8 +40,14 @@ cov: fake
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
+autod: install
+	@./node_modules/.bin/autod \
+		-w \
+		-f "~"
+	@$(MAKE) install
+
 clean:
 	@rm -rf node_modules
 	@rm -rf coverage
 
-.PHONY: start dev init fake install jshint test cov clean
+.PHONY: start dev install jshint test cov autod clean
