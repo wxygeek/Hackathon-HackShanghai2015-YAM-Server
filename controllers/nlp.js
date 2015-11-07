@@ -103,7 +103,7 @@ var getNLPTimeResult = function*(text) {
 };
 
 
-router.get('/sms', function*() {
+router.post('/sms', function*() {
   // var text = "10:30一起吃饭啊。";
   // var name = "Yu";
   // var phone = "130000000000";

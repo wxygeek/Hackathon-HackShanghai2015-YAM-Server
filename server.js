@@ -47,6 +47,22 @@ if (config.debug) {
 //解析http头
 app.use(formidable());
 
+app.use(function*(next) {
+  console.log('-----------------this.path--------------------');
+  console.log(this.path);
+  console.log('-----------------this.query--------------------');
+  console.log(this.query);
+  console.log('-----------------this.params--------------------');
+  console.log(this.params);
+  console.log('--------------this.request.body-----------------');
+  console.log(this.request.body);
+
+  yield next;
+
+  console.log('--------------this.body-----------------');
+  console.log(this.body);
+});
+
 //路由
 app.use(router.serverRouter);
 require('./controllers/index.js');
