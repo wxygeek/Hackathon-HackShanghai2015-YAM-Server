@@ -104,11 +104,7 @@ var getNLPTimeResult = function*(text) {
 
 
 router.post('/sms', function*() {
-  // var text = "10:30一起吃饭啊。";
-  // var name = "Yu";
-  // var phone = "130000000000";
   var text = this.request.body.text;
-  var name = this.request.body.name;
   var phone = this.request.body.phone;
 
   var obj = {
@@ -165,6 +161,8 @@ router.post('/sms', function*() {
       obj.autoReply.content = "不要。";
     }
   }
+
+  var name = currentName ? currentName.name : '未知联系人';
 
   obj.description = "来自 " + name + " [SMS]\n自动回复：" + obj.autoReply.content;
 
