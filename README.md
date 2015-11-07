@@ -1,2 +1,2 @@
-HIT-SSTC
+YAM-Server
 ====================
