@@ -54,6 +54,24 @@ exports.storage = [{
   noBtnText: '手动处理',
   description: '来自 Camera N13 [Smart Home] \n识别信息：小偷为男性，身高1.7米，身着蓝色上衣，黑色裤子。\n将自动报警，请注意！',
   picUrl: 'http://api.itimepost.com:7777/img/110.jpeg'
+}, {
+  title: '今天是 Xander 20岁的生日',
+  autoReply: {
+    flag: true,
+    content: '祝你生日快乐哦！每天都要开开心心的~',
+    phone: '+8615945990589'
+  },
+  autoCalendar: {
+    flag: false,
+    time: 1447018462,
+    content: '',
+    place: ''
+  },
+  hasCountDown: true,
+  yesBtnText: '自动发送',
+  noBtnText: '手动处理',
+  description: '来自 Xander [Contact]\n自动发送：祝你生日快乐哦！每天都要开开心心的~',
+  picUrl: 'http://api.itimepost.com:7777/img/xander.jpg'
 }];
 
 exports.storage_old = [{
