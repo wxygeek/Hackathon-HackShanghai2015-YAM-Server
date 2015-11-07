@@ -4,6 +4,7 @@ var router = require('../router').router;
 var utils = require('../utils');
 var urllib = require('urllib');
 var moment = require('moment');
+var db = require('../db');
 
 var smsRules = [{
   rule: /一起/,
@@ -110,6 +111,15 @@ var getNLPTimeResult = function*(text) {
 
   return time;
 };
+
+router.get('/get', function*() {
+  var a = db.storage.pop();
+  if(!a) {
+    this.status = 404;
+  } else {
+    this.body = a;
+  }
+});
 
 
 router.post('/sms', function*() {

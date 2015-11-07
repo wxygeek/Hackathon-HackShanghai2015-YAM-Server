@@ -4,3 +4,4 @@
 
 require('./home');
 require('./nlp');
+require('./smart');
