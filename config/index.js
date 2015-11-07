@@ -7,7 +7,7 @@ var config = {};
 
 config.keys = ['SSTC', 'ortjyh343'];
 config.debug = true;
-config.port = 8080;
+config.port = 7777;
 
 if (process.env.NODE_ENV === 'production') {
   var customConfig = {};
