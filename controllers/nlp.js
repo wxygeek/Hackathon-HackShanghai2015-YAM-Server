@@ -146,9 +146,10 @@ var getNLPTimeResult = function*(text) {
 };
 
 var count = 0;
-
+var hasSentAnyPerson = false;
 router.get('/get', function*() {
-  if (isAnyPerson) {
+  if (isAnyPerson && !hasSentAnyPerson) {
+    hasSentAnyPerson = true;
     this.body = {
       title: '检测到小偷进入到你的房间！',
       autoReply: {
