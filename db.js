@@ -64,7 +64,7 @@ exports.storage = [{
   autoCalendar: {
     flag: true,
     time: 1448971200,
-    content: 'TFBOY上海演唱会',
+    content: 'TFBOY上海演唱会 第1排20座',
     place: ''
   },
   hasCountDown: true,
