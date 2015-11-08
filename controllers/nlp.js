@@ -147,7 +147,18 @@ var getNLPTimeResult = function*(text) {
 
 var count = 0;
 var hasSentAnyPerson = false;
+
+var k = 0;
+
 router.get('/get', function*() {
+  if(k === 0) {
+    this.status = 404;
+    k = 1;
+    return;
+  }
+
+  k = 0;
+
   if (isAnyPerson && !hasSentAnyPerson) {
     hasSentAnyPerson = true;
     this.body = {
