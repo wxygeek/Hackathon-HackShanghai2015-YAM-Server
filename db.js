@@ -70,7 +70,7 @@ exports.storage = [{
   hasCountDown: true,
   yesBtnText: '自动订票',
   noBtnText: '手动处理',
-  description: '来自 idol [Public Info]\n自动为你订购TFBOY上海演唱会第一排VIP座位，售价18888元。',
+  description: '来自 Idol [Public Info]\n自动为你订购TFBOY上海演唱会第一排VIP座位，售价18888元。',
   picUrl: 'http://api.itimepost.com:7777/img/tf.jpg'
 }, {
   title: '今天是 Xander 20岁的生日',
