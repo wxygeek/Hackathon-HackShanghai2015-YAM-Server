@@ -62,7 +62,7 @@ exports.storage = [{
     phone: ''
   },
   autoCalendar: {
-    flag: true,
+    flag: false,
     time: 1448971200,
     content: 'TFBOY上海演唱会',
     place: ''
