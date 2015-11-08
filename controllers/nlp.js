@@ -26,7 +26,7 @@ router.get('/getHome', function*() {
 var isAnyPerson = 0;
 
 router.post('/postHome', function*() {
-  isAnyPerson = this.request.body;
+  isAnyPerson = parseInt(this.request.body.value);
 });
 
 
