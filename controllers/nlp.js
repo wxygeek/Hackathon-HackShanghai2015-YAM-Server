@@ -27,9 +27,9 @@ var isAnyPerson = 0;
 var n = 0;
 router.post('/postHome', function*() {
   var r = parseInt(this.request.body.value);
-  if(r === 0) {
+  if (r === 0) {
     n++;
-    if(r === 10) {
+    if (r === 10) {
       isAnyPerson = 0;
     }
   } else {
@@ -50,6 +50,11 @@ var namePriorities = [{
   rule: /\+8615704600640/,
   priority: 100,
   picKey: 'ylz.jpg'
+}, {
+  name: 'Tang Feihu',
+  rule: /\+8615669978877/,
+  priority: 100,
+  picKey: 'tfh.jpg'
 }, {
   name: 'Sarah',
   rule: /\+8615945990589/,
@@ -159,7 +164,7 @@ var hasSentAnyPerson = false;
 var k = 1;
 
 router.get('/get', function*() {
-  if(k === 1 || k === 2) {
+  if (k === 1 || k === 2) {
     this.status = 404;
     k++;
     return;
