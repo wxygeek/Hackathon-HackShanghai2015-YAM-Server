@@ -163,6 +163,7 @@ router.post('/sms', function*() {
     var rule = smsRules[i];
     if (rule.rule.test(text)) {
       currentSmsRule = rule;
+      obj.autoCalendar.flag = true;
       break;
     }
   }
@@ -193,6 +194,7 @@ router.post('/sms', function*() {
   obj.description = "来自 " + name + " [SMS]\n自动回复：" + obj.autoReply.content;
 
   if (obj.autoCalendar.flag) {
+    obj.autoCalendar.content = text;
     obj.description += "\n加入日程：";
   }
 
