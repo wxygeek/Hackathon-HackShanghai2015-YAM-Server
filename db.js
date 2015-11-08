@@ -73,24 +73,6 @@ exports.storage = [{
   description: '来自 idol [Public Info]\n自动为你订购TFBOY上海演唱会第一排VIP座位，售价18888元。',
   picUrl: 'http://api.itimepost.com:7777/img/tf.jpg'
 }, {
-  title: '检测到小偷进入到你的房间！',
-  autoReply: {
-    flag: false,
-    content: '',
-    phone: ''
-  },
-  autoCalendar: {
-    flag: false,
-    time: 1447018462,
-    content: '',
-    place: ''
-  },
-  hasCountDown: true,
-  yesBtnText: '自动报警',
-  noBtnText: '手动处理',
-  description: '来自 Camera N13 [Smart Home] \n识别信息：小偷为男性，身高1.7米，身着蓝色上衣，黑色裤子。\n将自动报警，请注意！',
-  picUrl: 'http://api.itimepost.com:7777/img/110.jpeg'
-}, {
   title: '今天是 Xander 20岁的生日',
   autoReply: {
     flag: true,

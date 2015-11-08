@@ -6,6 +6,31 @@ var urllib = require('urllib');
 var moment = require('moment');
 var db = require('../db');
 
+
+var homeFlag = 0;
+var num = 0;
+
+router.get('/getHome', function*() {
+  this.body = homeFlag;
+
+  if (homeFlag) {
+    num++;
+  }
+
+  if (num === 2) {
+    homeFlag = 0;
+    num = 0;
+  }
+});
+
+var isAnyPerson = 0;
+
+router.post('/postHome', function*() {
+  isAnyPerson = this.request.body;
+});
+
+
+
 var smsRules = [{
   rule: /一起/,
   yes: '好的，不见不散。',
@@ -123,13 +148,44 @@ var getNLPTimeResult = function*(text) {
 var count = 0;
 
 router.get('/get', function*() {
-  if(count + 1 >= db.storage.length) {
+  if (isAnyPerson) {
+    this.body = {
+      title: '检测到小偷进入到你的房间！',
+      autoReply: {
+        flag: false,
+        content: '',
+        phone: ''
+      },
+      autoCalendar: {
+        flag: false,
+        time: 1447018462,
+        content: '',
+        place: ''
+      },
+      hasCountDown: true,
+      yesBtnText: '自动报警',
+      noBtnText: '手动处理',
+      description: '来自 Camera N13 [Smart Home] \n识别信息：小偷为男性，身高1.7米，身着蓝色上衣，黑色裤子。\n将自动报警，请注意！',
+      picUrl: 'http://api.itimepost.com:7777/img/110.jpeg'
+    };
+    isAnyPerson = 0;
+    return;
+  }
+
+
+
+  if (count + 1 >= db.storage.length) {
     count = 0;
   } else {
     count++;
   }
 
   this.body = db.storage[count];
+
+
+  if (this.body.title === '上海今日PM2.5为200') {
+    homeFlag = 1;
+  }
 });
 
 
@@ -178,8 +234,8 @@ router.post('/sms', function*() {
     }
   }
 
-  if(currentSmsRule) {
-    if(!currentName || currentName.priority > 0) {
+  if (currentSmsRule) {
+    if (!currentName || currentName.priority > 0) {
       obj.autoReply.content = currentSmsRule.yes;
     } else {
       obj.autoReply.content = currentSmsRule.no;
