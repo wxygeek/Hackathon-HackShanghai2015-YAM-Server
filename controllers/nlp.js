@@ -24,9 +24,17 @@ router.get('/getHome', function*() {
 });
 
 var isAnyPerson = 0;
-
+var n = 0;
 router.post('/postHome', function*() {
-  isAnyPerson = parseInt(this.request.body.value);
+  var r = parseInt(this.request.body.value);
+  if(r === 0) {
+    n++;
+    if(r === 10) {
+      isAnyPerson = 0;
+    }
+  } else {
+    isAnyPerson = 1;
+  }
 });
 
 
